@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\StatisticsController;
 use App\Http\Controllers\WishlistController;
 use Illuminate\Support\Facades\Route;
 
@@ -21,8 +22,19 @@ Route::post('/login', [AuthController::class, 'login']);
 
 Route::prefix('v1')->group(function() {
     Route::group(['middleware' => 'auth:sanctum'], function() {
+
+        // Wishlist
         Route::prefix('/wishlist')->group(function() {
             Route::get('/', [WishlistController::class, 'index']);
+            Route::post('/add', [WishlistController::class, 'addToWishlist']);
+            Route::post('/update/{id}', [WishlistController::class, 'updateQuantity']);
+            Route::get('/remove/{id}', [WishlistController::class, 'removeFromWishlist']);
+        });
+        // ./Wishlist
+
+        Route::prefix('/statistics')->group(function() {
+            Route::get('/products-count', [StatisticsController::class, 'productsCount']);
+            Route::get('/products-count-website', [StatisticsController::class, 'productsCountWebsite']);
             Route::post('/add', [WishlistController::class, 'addToWishlist']);
             Route::post('/update/{id}', [WishlistController::class, 'updateQuantity']);
             Route::get('/remove/{id}', [WishlistController::class, 'removeFromWishlist']);

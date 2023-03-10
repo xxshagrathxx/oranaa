@@ -9,7 +9,7 @@ class WishlistController extends Controller
 {
     public function index()
     {
-        return auth('sanctum')->user()->id;
+        // return auth('sanctum')->user()->id;
     }
 
     public function addToWishlist(Request $request)

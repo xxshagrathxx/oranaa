@@ -26,6 +26,8 @@ class ProductFactory extends Factory
         return $this->state(function () {
             return [
                 'url' => 'https://amazon.com/'.$this->faker->numberBetween(1000, 999999),
+                // To save just the domain in database for some more comparisions
+                'domain' => 'amazon.com',
             ];
         });
     }
@@ -35,6 +37,8 @@ class ProductFactory extends Factory
         return $this->state(function () {
             return [
                 'url' => 'https://steampowered.com/app/'.$this->faker->numberBetween(1000, 999999),
+                // To save just the domain in database for some more comparisions
+                'domain' => 'steampowered.com',
             ];
         });
     }
@@ -44,6 +48,8 @@ class ProductFactory extends Factory
         return $this->state(function () {
             return [
                 'url' => 'https://example.com/product/'.$this->faker->numberBetween(1000, 999999),
+                // To save just the domain in database for some more comparisions
+                'domain' => 'example.com',
             ];
         });
     }

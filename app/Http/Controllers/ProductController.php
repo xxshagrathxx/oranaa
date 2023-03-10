@@ -42,6 +42,8 @@ class ProductController extends Controller
             'name' => $request->get('name'),
             'price' => $request->get('price'),
             'url' => $request->get('url'),
+            // To save just the domain in database for some more comparisions
+            'domain' => getDomainName($request->get('url')),
             'description' => $converter->convert($request->get('description'))->getContent(),
         ]);
 
@@ -75,6 +77,8 @@ class ProductController extends Controller
         $product = Product::findOrFail($id);
         $product->name = $request->get('name');
         $product->url = $request->get('url');
+        // To save just the domain in database for some more comparisions
+        $product->domain = getDomainName($request->get('url'));
         $product->price = $request->get('price');
         $product->description = $converter->convert($request->get('description'))->getContent();
         $product->save();
