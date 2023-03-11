@@ -31,15 +31,15 @@ Route::prefix('v1')->group(function() {
             Route::get('/remove/{id}', [WishlistController::class, 'removeFromWishlist']);
         });
         // ./Wishlist
-
-        Route::prefix('/statistics')->group(function() {
-            Route::get('/products-count', [StatisticsController::class, 'productsCount']);
-            Route::get('/products-count-website', [StatisticsController::class, 'productsCountWebsite']);
-            Route::get('/products-average', [StatisticsController::class, 'productsAveragePrice']);
-            Route::get('/products-highest', [StatisticsController::class, 'productsHighestPrice']);
-            Route::get('/products-month', [StatisticsController::class, 'productsTotalMonth']);
-        });
     });
+});
+
+Route::prefix('/statistics')->group(function() {
+    Route::get('/products-count', [StatisticsController::class, 'productsCount']);
+    Route::get('/products-count-website', [StatisticsController::class, 'productsCountWebsite']);
+    Route::get('/products-average', [StatisticsController::class, 'productsAveragePrice']);
+    Route::get('/products-highest', [StatisticsController::class, 'productsHighestPrice']);
+    Route::get('/products-month', [StatisticsController::class, 'productsTotalMonth']);
 });
 
 // Route::get('/products', [ProductController::class, 'index']);
