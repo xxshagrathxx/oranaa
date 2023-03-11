@@ -35,9 +35,9 @@ Route::prefix('v1')->group(function() {
         Route::prefix('/statistics')->group(function() {
             Route::get('/products-count', [StatisticsController::class, 'productsCount']);
             Route::get('/products-count-website', [StatisticsController::class, 'productsCountWebsite']);
-            Route::post('/add', [WishlistController::class, 'addToWishlist']);
-            Route::post('/update/{id}', [WishlistController::class, 'updateQuantity']);
-            Route::get('/remove/{id}', [WishlistController::class, 'removeFromWishlist']);
+            Route::get('/products-average', [StatisticsController::class, 'productsAveragePrice']);
+            Route::get('/products-highest', [StatisticsController::class, 'productsHighestPrice']);
+            Route::get('/products-month', [StatisticsController::class, 'productsTotalMonth']);
         });
     });
 });
