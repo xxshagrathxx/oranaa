@@ -29,11 +29,13 @@ one of the statistics should be displayed.
 Please write your answers to following questions.
 
 > **Please in a brief, explain your implementation of the new feature**
->
+>Added a migration file to create a column in products used to call api(s) easier and more efficient
+>Added user sanctum to secure api(s) if needed
+>Added a way for wishlists CRUD
 > _..._
 
 > **For the refactoring, would you change something else if you had more time?**
->
+>After adding the column([DOMAIN]), Modified the ProductController and written comments
 > _..._
 
 ## Running the project
@@ -46,3 +48,12 @@ You can use the Database seeded attached with the project to get data to work wi
 You can run the attached project tests using `php artisan test` command.
 
 [laravel]: https://laravel.com/docs/9.x
+
+
+
+
+#### My custom part of explanation
+>The git repo. used is "https://github.com/xxshagrathxx/oranaa"
+>General comments found within the project discribing what the lines of code are used for
+>The README.md file contatins some extra explanation
+>Created a file ([run_api.sh]) at the root directory to run Api(s) as requested
